@@ -12,7 +12,7 @@ app.listen(port,()=>{
 })
 
 
-const users = [
+const users =  [
     {name:"dhananjai",age:25,email:"dhananajai@gmail.com"},
     {name:"manoj",age:25,email:"dhananajai@gmail.com"}
 ]
@@ -23,12 +23,13 @@ const users = [
 app.get("user-info",(req,res)=>{
     const name = req.query.name
 
+
     if(!name){
         res.status(400).json({
             message:"enter a username"
         })
     }
-    const info = users(name)
+    const info = users[name]
 
     const response = {
         name:name,
